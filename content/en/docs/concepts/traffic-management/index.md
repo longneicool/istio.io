@@ -151,7 +151,7 @@ about destination rules in the next section.
 The following virtual service routes
 requests to different versions of a service depending on whether the request
 comes from a particular user.
-
+```yaml
 {{< text yaml >}}
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -174,17 +174,17 @@ spec:
         host: reviews
         subset: v3
 {{< /text >}}
-
+```
 #### The hosts field {#the-hosts-field}
 
-The `hosts` field lists the virtual service’s hosts - in other words, the user-addressable
-destination or destinations that these routing rules apply to. This is the
+The `hosts` field lists the virtual service’s hosts - **in other words, the user-addressable
+destination or destinations that these routing rules apply to**. This is the
 address or addresses the client uses when sending requests to the service.
 
-{{< text yaml >}}
+```yaml
 hosts:
 - reviews
-{{< /text >}}
+```
 
 The virtual service hostname can be an IP address, a DNS name, or, depending on
 the platform, a short name (such as a Kubernetes service short name) that resolves,
